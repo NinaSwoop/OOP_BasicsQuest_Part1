@@ -2,6 +2,7 @@
 
 require_once'Bicycle.php';
 require_once'Car.php';
+require_once'Truck.php';
 
 
 // $bike = new Bicycle('yellow');
@@ -15,11 +16,11 @@ require_once'Car.php';
 // $bike->dump();
 
 // Moving bike
-// echo $bike->forward();
-// echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
-// echo $bike->brake();
-// echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed(). ' km/h' . '<br>';
-// echo $bike->brake();
+// echo $bicycle->forward();
+// echo '<br> Vitesse du vélo : ' . $bicycle->getCurrentSpeed() . ' km/h' . '<br>';
+// echo $bicycle->brake();
+// echo '<br> Vitesse du vélo : ' . $bicycle->getCurrentSpeed(). ' km/h' . '<br>';
+// echo $bicycle->brake();
 
 // $rockrider = new Bicycle('black');
 
@@ -29,24 +30,44 @@ require_once'Car.php';
 
 // $tornado->forward();
 
+
+// Bicycle 
 $bicycle = new Bicycle('blue', 1);
 echo $bicycle->forward();
 var_dump($bicycle);
 
+echo $bicycle->forward();
+echo '<br> Vitesse du vélo : ' . $bicycle->getCurrentSpeed() . ' km/h' . '<br>';
+echo $bicycle->brake();
+echo '<br> Vitesse du vélo : ' . $bicycle->getCurrentSpeed(). ' km/h' . '<br>';
+echo $bicycle->brake();
+
+
+// Car 
 $car = new Car('green', 4, 'electric');
 echo $car->forward();
 var_dump($car);
 
 var_dump(Car::ALLOWED_ENERGIES);
 
-// $car est une instance de Car. C'est l'instance que l'on dump
-// $car = new Car('blue', 2, 'fuel');
-// var_dump($car);
-
-
 // Moving car
-// echo $car->forward();
-// echo '<br> Vitesse du vélo : ' . $car->getCurrentSpeed() . ' km/h' . '<br>';
-// echo $car->brake();
-// echo '<br> Vitesse du vélo : ' . $car->getCurrentSpeed(). ' km/h' . '<br>';
-// echo $car->brake();
+echo $car->forward();
+echo '<br> Vitesse de la voiture: ' . $car->getCurrentSpeed() . ' km/h' . '<br>';
+echo $car->brake();
+echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed(). ' km/h' . '<br>';
+echo $car->brake();
+
+// Truck
+$truck = new Truck('blue', 1, "fuel", 100);
+echo $truck->forward();
+var_dump($truck);
+
+var_dump(Truck::ALLOWED_ENERGIES);
+
+// Moving truck
+echo $truck->forward();
+echo '<br> Vitesse du camion, : ' . $truck->getCurrentSpeed() . ' km/h' . '<br>';
+echo $truck->brake();
+echo '<br> Vitesse du camion : ' . $truck->getCurrentSpeed(). ' km/h' . '<br>';
+echo $truck->brake();
+echo $truck->getLoad();
