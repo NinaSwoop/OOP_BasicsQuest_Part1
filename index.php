@@ -1,9 +1,10 @@
 <?php
 
-require_once'Bicycle.php';
-require_once'Car.php';
-require_once'Truck.php';
-
+require_once 'Bicycle.php';
+require_once 'Car.php';
+require_once 'Truck.php';
+require_once 'vehicle.php';
+ 
 
 // $bike = new Bicycle('yellow');
 // var_dump($bike);
@@ -56,6 +57,11 @@ echo '<br> Vitesse de la voiture: ' . $car->getCurrentSpeed() . ' km/h' . '<br>'
 echo $car->brake();
 echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed(). ' km/h' . '<br>';
 echo $car->brake();
+
+// Instanciation nouveaux objets car 
+$tesla = new Car('black', 4);
+$ferrari = new Car('red', 2);
+$schoolBus = new Bus('yellow', 40);
 
 // Truck
 $truck = new Truck('blue', 1, "fuel", 100);
